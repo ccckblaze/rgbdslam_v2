@@ -24,7 +24,9 @@
  */
 #ifndef QT_ROS_H
 #define QT_ROS_H
+#ifndef Q_MOC_RUN  
 #include "ros/ros.h"
+#endif
 #include <QThread>
 #include <QObject>
 

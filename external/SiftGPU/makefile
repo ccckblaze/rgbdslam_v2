@@ -16,8 +16,12 @@ CUDA_INSTALL_PATH = /usr/local/cuda
 #siftgpu_cuda_options = -arch sm_10
 #--------------------------------------------------------------------------------------------------
 # enable SSE optimization for GL-based implementations
-siftgpu_enable_sse = 1
+siftgpu_enable_sse = 0
 siftgpu_sse_options = -march=native -mfpmath=sse
+#--------------------------------------------------------------------------------------------------
+# enable SSE optimization for GL-based implementations
+siftgpu_enable_neon = 1
+siftgpu_sse_options = -march=native -mcpu=native -mtune=native -mfloat-abi=hard -mfpu=neon-vfpv4 
 #--------------------------------------------------------------------------------------------------
 # openGL context creation.  1 for glut, 0 for xlib
 siftgpu_prefer_glut = 0
@@ -60,6 +64,10 @@ endif
 
 ifneq ($(siftgpu_enable_sse), 0)
  	CFLAGS += $(siftgpu_sse_options)
+else 
+        ifneq ($(siftgpu_enable_neon), 0)
+                CFLAGS += $(siftgpu_neon_options)
+        endif
 endif
 
 ifneq ($(siftgpu_prefer_glut), 0)

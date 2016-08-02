@@ -108,7 +108,7 @@ void GraphManager::updateLandmarkInGraph(Landmark* lm){
   assert(int(n->feature_locations_3d_.size()) > feature_id);
 
   Eigen::Vector4f pos_relative = n->feature_locations_3d_[feature_id];
-  if(isnan(pos_relative(2))){
+  if(std::isnan(pos_relative(2))){
     pos_relative(2) = 1.0; //FIXME instead of using an arbitrary depth value, use the correct vertex type
     return;
   }
@@ -149,7 +149,7 @@ void GraphManager::updateLandmarkInGraph(Landmark* lm){
    Proj_edge_type* projectionEdge = new Proj_edge_type();
    cv::KeyPoint kp = node->feature_locations_2d_[kpt];
    Eigen::Vector4f pos_relative = node->feature_locations_3d_[kpt];
-   if(!isnan(pos_relative(2))){
+   if(!std::isnan(pos_relative(2))){
      projectionEdge->setMeasurement(Eigen::Vector3d(kp.pt.x,kp.pt.y,pos_relative[2]));
      Eigen::Matrix3d info_mat = point_information_matrix(pos_relative[2]);
      projectionEdge->setInformation(info_mat);

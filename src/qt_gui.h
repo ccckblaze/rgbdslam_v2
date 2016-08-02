@@ -28,7 +28,9 @@
 
 #include <QMainWindow>
 #include <QGridLayout>
+#ifndef Q_MOC_RUN
 #include "parameter_server.h"
+#endif
 #include <QMatrix4x4>
 #include <QMap>
 

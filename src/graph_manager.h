@@ -25,6 +25,7 @@
 #ifndef GRAPH_MANAGER_H_
 #define GRAPH_MANAGER_H_
 
+#ifndef Q_MOC_RUN  
 #include <ros/ros.h>
 #include <tf/transform_broadcaster.h>
 #include "node.h"
@@ -34,13 +35,6 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
 #include <map>
-#include <QObject>
-#include <QString>
-#include <QMatrix4x4>
-#include <QList>
-#include <QMap>
-#include <QMutex>
-
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -48,6 +42,14 @@
 #include <memory> //for auto_ptr
 #include <utility>
 #include "parameter_server.h"
+#endif
+
+#include <QObject>
+#include <QString>
+#include <QMatrix4x4>
+#include <QList>
+#include <QMap>
+#include <QMutex>
 // #define DO_LOOP_CLOSING
 // DO_FEATURE_OPTIMIZATION is set in CMakeLists.txt
 #ifdef DO_FEATURE_OPTIMIZATION

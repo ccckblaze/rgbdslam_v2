@@ -97,7 +97,7 @@ feature_edge_type* edgeToFeature(const Node* node,
    cv::KeyPoint kp = node->feature_locations_2d_[feature_id];
    Vector4f position = node->feature_locations_3d_[feature_id];
    float depth = position(2);
-   if(!isnan(depth))
+   if(!std::isnan(depth))
    {
      Eigen::Vector3d pix_d(kp.pt.x,kp.pt.y,depth);
      //ROS_INFO_STREAM("Edge from camera to position "<< pix_d.transpose());

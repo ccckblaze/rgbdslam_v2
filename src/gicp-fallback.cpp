@@ -57,7 +57,7 @@ void saveCloud(const char* filename, const pointcloud_type& pc, const int max_cn
     {
         point_type p = pc.points[i];
 
-        bool invalid = (isnan(p.x) || isnan(p.y) || isnan(p.z));
+        bool invalid = (std::isnan(p.x) || std::isnan(p.y) || std::isnan(p.z));
         if (invalid)
         	continue;
 

@@ -21,8 +21,10 @@
 #include <QList>
 #include <QPair>
 #include <QMatrix4x4>
+#ifndef Q_MOC_RUN  
 #include "parameter_server.h"
 #include "renderable.h"
+#endif
 
 //!OpenGL based display of the 3d model 
 class GLViewer : public QGLWidget {

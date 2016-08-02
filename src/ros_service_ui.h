@@ -19,7 +19,9 @@
 #include <QMainWindow>
 #include <QGridLayout>
 //#include "glviewer.h"
+#ifndef Q_MOC_RUN  
 #include "parameter_server.h"
+#endif
 #include <QObject>
 #include "rgbdslam/rgbdslam_ros_ui.h"
 #include "rgbdslam/rgbdslam_ros_ui_b.h"

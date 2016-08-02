@@ -24,7 +24,7 @@ void filterCloud(const pointcloud_type& cloud_in, pointcloud_type& cloud_out, in
   std::vector<int> non_nan_indices;
   non_nan_indices.reserve(cloud_in.size());
   for (unsigned int i=0; i<cloud_in.size(); i++ ){
-    if (!isnan(cloud_in.points.at(i).z)) 
+    if (!std::isnan(cloud_in.points.at(i).z)) 
       non_nan_indices.push_back(i);
   }
   ROS_INFO("Nonnans in cloud: %zu", non_nan_indices.size());

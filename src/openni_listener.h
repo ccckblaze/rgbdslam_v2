@@ -17,6 +17,7 @@
 
 #ifndef OPENNI_LISTENER_H
 #define OPENNI_LISTENER_H
+#ifndef Q_MOC_RUN  
 #include "ros/ros.h"
 //#include <pcl_tf/transforms.h>
 #include <message_filters/subscriber.h>
@@ -29,10 +30,11 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
 #include "graph_manager.h"
+#include <rosbag/bag.h>
+#endif
 #include <qtconcurrentrun.h>
 #include <QImage> //for cvMat2QImage not listet here but defined in cpp file
 #include <QStringList> 
-#include <rosbag/bag.h>
 
 //forward-declare to avoid including tf
 ///\cond
