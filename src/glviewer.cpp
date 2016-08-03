@@ -338,7 +338,7 @@ void GLViewer::drawRenderable() {
 }
 void GLViewer::drawOneCloud(int i) {
         glPushMatrix();
-        glMultMatrixd(static_cast<GLdouble*>( (*cloud_matrices)[i].data() ));//works as long as qreal and GLdouble are typedefs to double (might depend on hardware)
+        glMultMatrixd(static_cast<qreal*>( (*cloud_matrices)[i].data() ));//works as long as qreal and GLdouble are typedefs to double (might depend on hardware)
         if(show_clouds_) glCallList(cloud_list_indices[i]);
         if(show_features_ && feature_list_indices.size()>i){
           glCallList(feature_list_indices[i]);
@@ -1261,6 +1261,7 @@ QSize GLViewer::minimumSizeHint() const { return QSize(0, 0); }
 QSize GLViewer::sizeHint() const { return QSize(0, 0); }
 void GLViewer::setXRotation(int angle) { } 
 void GLViewer::setYRotation(int angle) { } 
+void GLViewer::setZRotation(int angle) { }
 void GLViewer::setRotationGrid(double rot_step_in_degree) { } 
 void GLViewer::setStereoShift(double shift) { } 
 void GLViewer::initializeGL() { }

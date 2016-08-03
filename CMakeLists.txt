@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 cmake_policy(SET CMP0003 NEW)
-#########################################################
+add_definitions(-DDUMMYGLVIEWER)
+########################################################
 ### USER CONFIG #########################################
 #########################################################
 set(USE_SIFT_GPU  1 CACHE BOOL "build with support for siftgpu") 
